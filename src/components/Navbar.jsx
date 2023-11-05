@@ -5,21 +5,20 @@ const Navbar = () => {
   const navElement = <>
     <li><NavLink to={'/'}>Home</NavLink></li>
     <li><NavLink to={'/rooms'}>Rooms</NavLink></li>
-    <li> <a>Gallery</a></li>
-    <li> <a>Testimonials</a></li>
-    <li> <a>Events and Activities</a></li>
-    <li> <a>Contact Us</a></li>
-    <li > <a> <span className=" text-green-600 font-medium">Book Now</span > </a></li>
+    <li> <NavLink to={'/gallery'}>Gallery</NavLink></li>
+    <li> <NavLink to={'/testimonials'}>Testimonials</NavLink></li>
+    <li> <NavLink to={'/Events-and-Activities'}>Events and Activities</NavLink></li>
+    <li> <NavLink to={'/contact-us'}>Contact Us</NavLink></li>
+    <li > <NavLink to={'/book-now'}> <span className=" text-blue-600 font-medium">Book Now</span > </NavLink></li>
 
     <li tabIndex={0}>
       <details>
         <summary>More</summary>
         <ul className="p-2">
-          <li><a>Career Opportunities</a></li>
-          <li><a>Local Area Guide</a></li>
-          <li><a>FAQ</a></li>
-          <li><a>Local Area Guide</a></li>
-          <li><a>About Us</a></li>
+          <li><NavLink to={'/career-opportunities'}>Career Opportunities</NavLink></li>
+          <li><NavLink to={'/local-area-guide'}>Local Area Guide</NavLink></li>
+          <li><NavLink to={'/faqs'}>FAQ</NavLink></li>
+          <li><NavLink to={'/about-us'}>About Us</NavLink></li>
         </ul>
       </details>
     </li>
