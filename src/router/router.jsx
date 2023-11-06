@@ -13,6 +13,8 @@ import CareerOpportunities from "../pages/CareerOpportunities";
 import LocalAreaGuide from "../pages/LocalAreaGuide";
 import FAQ from "../pages/FAQ";
 import AboutUs from "../pages/AboutUs";
+import Login from "../pages/Login";
+import Registration from "../pages/Registration";
 
 
   const router= createBrowserRouter([
@@ -66,6 +68,15 @@ import AboutUs from "../pages/AboutUs";
               path:'/about-us',
               element:<AboutUs></AboutUs>,
             },
+            {
+              path: '/login',
+              element: <Login></Login>,
+          },
+          {
+              path: '/register',
+              element: <Registration></Registration>,
+          },
+
             
            
 
