@@ -3,10 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 import useAxios from '../customHooks/useAxios';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import {BiUserCircle} from 'react-icons/bi';
-import {LiaExpandArrowsAltSolid, LiaMoneyBillWaveAltSolid} from 'react-icons/lia'
+import { BiUserCircle } from 'react-icons/bi';
+import { LiaExpandArrowsAltSolid, LiaMoneyBillWaveAltSolid } from 'react-icons/lia'
 import './css/Room.css'
-import HouseRule from '../components/HouseRule';
+
+import RoomTabs from '../components/RoomTabs';
 const Room = () => {
     const { roomId } = useParams();
     const axios = useAxios();
@@ -41,20 +42,26 @@ const Room = () => {
 
             </div>
 
-            <div className=' flex gap-6 lg:gap-32 lg:text-xl  mx-auto text-center justify-center shadow-md bg-slate-300'>
-                
-                    
-                    <p className='flex flex-col items-center gap-1 text-2xl'>
-                     <BiUserCircle className='text-5xl'/>   {roomInfo.members} GUESTS
-                    </p>
-                    <p className='flex flex-col items-center text-2xl gap-1'>
-                       <LiaExpandArrowsAltSolid className='text-5xl'></LiaExpandArrowsAltSolid> {roomInfo.feet}
-                       FT
-                    </p>
-                    <p className='flex flex-col items-center text-2xl gap-1'><LiaMoneyBillWaveAltSolid className='text-5xl'></LiaMoneyBillWaveAltSolid> {roomInfo.price} BDT</p>
-                   
-                </div>
-                {/* <HouseRule></HouseRule> */}
+            <div className=' flex gap-6 lg:gap-32 lg:text-xl  mx-auto text-center justify-center  py-8 text-gray-400 font-thin'>
+
+
+                <p className='flex flex-col items-center gap-1 text-2xl'>
+                    <BiUserCircle className='text-5xl ' />   {roomInfo.members} GUESTS
+                </p>
+                <p className='flex flex-col items-center text-2xl gap-1'>
+                    <LiaExpandArrowsAltSolid className='text-5xl'></LiaExpandArrowsAltSolid> {roomInfo.feet} FT
+                </p>
+                <p className='flex flex-col items-center text-2xl gap-1'><LiaMoneyBillWaveAltSolid className='text-5xl'></LiaMoneyBillWaveAltSolid> {roomInfo.price} BDT</p>
+
+            </div>
+
+            <RoomTabs></RoomTabs>
+
+
+           
+
+
+
 
 
 
