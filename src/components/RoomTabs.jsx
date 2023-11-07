@@ -1,6 +1,7 @@
 import HouseRule from '../components/HouseRule';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Reviews from './Reviews';
 
 const RoomTabs = () => {
     return (
@@ -16,7 +17,7 @@ const RoomTabs = () => {
                     <HouseRule></HouseRule>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <Reviews></Reviews>
                 </TabPanel>
             </Tabs>
 
