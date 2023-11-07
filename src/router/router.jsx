@@ -15,6 +15,7 @@ import FAQ from "../pages/FAQ";
 import AboutUs from "../pages/AboutUs";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import Room from "../pages/Room";
 
 
   const router= createBrowserRouter([
@@ -76,6 +77,10 @@ import Registration from "../pages/Registration";
               path: '/register',
               element: <Registration></Registration>,
           },
+          {
+            path:'/room/:roomId',
+            element:<Room></Room>
+          }
 
             
            

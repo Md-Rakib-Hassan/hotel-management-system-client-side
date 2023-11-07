@@ -1,0 +1,10 @@
+
+
+@media (min-width: 768px){
+    .carousel .slide img{
+        height: 80vh;
+        width: auto;
+    }
+    
+}
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import {BiUserCircle} from 'react-icons/bi'
+import { Link } from 'react-router-dom';
 const HotelCard = ({ info }) => {
     return (
         <div className=" rounded-md shadow-xl image-full relative overflow-hidden">
@@ -11,9 +12,9 @@ const HotelCard = ({ info }) => {
 
             
             
-            <div className='absolute bottom-4 text-white ml-12 space-y-3 z-50'>
+            <div className='absolute bottom-4 text-white ml-6 lg:ml-12 space-y-3 z-50'>
                 <h1 className='font-medium text-2xl'>{info.title}</h1>
-                <div className=' flex gap-10 text-xl'>
+                <div className=' flex gap-6 lg:gap-10 lg:text-xl text-base'>
                     
                     <p className='flex items-center gap-1'>
                      <span className='text-2xl'><BiUserCircle/></span>   {info.members} GUESTS
@@ -22,8 +23,8 @@ const HotelCard = ({ info }) => {
                        <img className='w-6' src='https://i.ibb.co/ykRcQpT/icon-size.png'/> {info.feet}
                        FT
                     </p>
-
-                    <button>Book Now</button>
+                    <Link to={`/room/${info._id}`}> <button>Book Now</button></Link>
+                   
                 </div>
             </div>
         </div>
