@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useAxios from '../customHooks/useAxios'
 // import { TransitionGroup, CSSTransition } from 'react-transition-group';
 // import Availability from './Availability';
 const Slider = () => {
-    const [index,setIndex]=useState(0);
+    const [index, setIndex] = useState(0);
+    const axios = useAxios();
+    const [images, setImages] = useState([]);
 
-    const images = [
-        "https://i.ibb.co/VQNsncc/parallax-02.jpg",
-        "https://i.ibb.co/z21wdF6/image-slide-01.jpg",
-        "https://i.ibb.co/qkv1wnK/parallax-01.jpg",
-    ]
+    useEffect(() => {
+        axios.get('/basic-data')
+        .then(res => setImages(res.data[0].slide_images));
+
+    },[axios])
+
+   
+
+
+
     setTimeout(() => {
-        setIndex(index+1);
-        if(index===images.length-1){
+        setIndex(index + 1);
+        if (index === images.length - 1) {
             setIndex(0);
         }
-        
 
-    },5000)
+
+    }, 5000)
     return (
         <div>
             {/* <TransitionGroup>
@@ -24,20 +32,20 @@ const Slider = () => {
                 timeout={3000}
                 classNames={'zoom-slider'}
                 > */}
-                    
-                {/* </CSSTransition>
+
+            {/* </CSSTransition>
             </TransitionGroup> */}
             {/* <div className='relative z-10'> */}
 
-            <img src={images[index]}  alt="" />
+            <img src={images[index]} alt="" />
 
             {/* <Availability></Availability> */}
 
             {/* </div> */}
-            
-            
 
-            
+
+
+
 
         </div>
     );

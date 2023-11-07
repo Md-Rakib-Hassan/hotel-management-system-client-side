@@ -48,7 +48,7 @@ const Navbar = () => {
            }
           </ul>
         </div>
-        <Link to={'/'}><img src="hotel-logo.png" className="h-16" alt="" /></Link>
+        <Link to={'/'}><img src="hotel-logo.png" className="h-16 hidden lg:block" alt="" /></Link>
         
       </div>
       <div className="navbar-center hidden lg:flex">
