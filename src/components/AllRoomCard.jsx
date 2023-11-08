@@ -1,7 +1,6 @@
-import React from 'react';
 import {BiUserCircle} from 'react-icons/bi'
 import { Link } from 'react-router-dom';
-const HotelCard = ({ info }) => {
+const AllRoomCard = ({ info }) => {
     return (
         <div className=" rounded-md shadow-xl image-full relative overflow-hidden">
            <div className='absolute top-3 right-0 px-8 py-2 bg-blue-700 font-medium z-20 text-white'>
@@ -12,12 +11,12 @@ const HotelCard = ({ info }) => {
 
             
             
-            <div className='absolute bottom-4 text-white ml-6 lg:ml-12 space-y-3 z-20'>
-                <h1 className='font-medium text-2xl'>{info.title}</h1>
-                <div className=' flex gap-6 lg:gap-10 lg:text-xl text-base'>
+            <div className='absolute bottom-4 text-white ml-6 lg:ml-2 space-y-3 z-20'>
+                <h1 className='font-medium text-xl'>{info.title}</h1>
+                <div className=' flex gap-6  text-base'>
                     
                     <p className='flex items-center gap-1'>
-                     <span className='text-2xl'><BiUserCircle/></span>   {info.members} GUESTS
+                     <span className='text-xl'><BiUserCircle/></span>   {info.members} GUESTS
                     </p>
                     <p className='flex items-center gap-1'>
                        <img className='w-6' src='https://i.ibb.co/ykRcQpT/icon-size.png'/> {info.feet}
@@ -31,4 +30,4 @@ const HotelCard = ({ info }) => {
     );
 };
 
-export default HotelCard;
+export default AllRoomCard;

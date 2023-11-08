@@ -29,11 +29,11 @@ const TopBar = () => {
 
 
     return (
-        <div className='bg-white shadow-md mb-10'>
-            <div className='flex justify-around'>
-                <p className='font-medium text-xl'>All Rooms</p>
+        <div className='bg-slate-50 shadow-md mb-10 sticky top-0 z-50'>
+            <div className='flex flex-col md:flex-row justify-between gap-5 py-2 rounded-md md:mx-10 '>
+                <p className='font-medium text-xl text-center md:text-left'>All Rooms</p>
 
-                <div>
+                <div className='mx-auto md:mx-0'>
                     <label htmlFor="sortSelection" className='font-medium'>Sort By:  </label>
                     <select className='bg-slate-200' name="sortSelection" id="" onChange={setValue}>
                         <option value="">Default</option>
