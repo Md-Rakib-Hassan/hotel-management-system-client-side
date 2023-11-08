@@ -8,7 +8,7 @@ export const AuthContext= createContext(null);
 
 const AuthProvider = ({ children }) => {
 
-    
+    const [loadedRooms,setLoadedRooms]=useState([]);
     const [user, setUser] = useState(null);
     const [isLoding, setIsLoding] = useState(true);
 
@@ -67,6 +67,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         isLoding,
         auth,
+        loadedRooms,
+        setLoadedRooms,
 
     }
 
