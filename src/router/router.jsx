@@ -8,7 +8,6 @@ import Gallery from "../pages/Gallery";
 import Testimonials from "../pages/Testimonials";
 import EventsAndActivities from "../pages/EventsAndActivities";
 import ContactUs from "../pages/ContactUs";
-import BookNow from "../pages/BookNow";
 import CareerOpportunities from "../pages/CareerOpportunities";
 import LocalAreaGuide from "../pages/LocalAreaGuide";
 import FAQ from "../pages/FAQ";
@@ -17,6 +16,7 @@ import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Room from "../pages/Room";
 import PrivateRoute from "./PrivateRoute";
+import TermsAndConditionsPage from "../pages/TermsAndConditionsPage";
 
 
   const router= createBrowserRouter([
@@ -51,12 +51,12 @@ import PrivateRoute from "./PrivateRoute";
             },
 
             {
-              path:'/book-now',
-              element:<BookNow></BookNow>,
+              path:'/my-booking',
+              element:<PrivateRoute></PrivateRoute>,
             },
             {
               path:'/career-opportunities',
-              element:<CareerOpportunities></CareerOpportunities>,
+              element:<PrivateRoute><CareerOpportunities></CareerOpportunities></PrivateRoute>,
             },
             {
               path:'/local-area-guide',
@@ -81,6 +81,10 @@ import PrivateRoute from "./PrivateRoute";
           {
             path:'/room/:roomId',
             element:<Room></Room>
+          },
+          {
+            path:'/terms-and-conditions',
+            element:<TermsAndConditionsPage></TermsAndConditionsPage>
           }
 
             

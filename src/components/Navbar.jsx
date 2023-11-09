@@ -15,7 +15,7 @@ const Navbar = () => {
     <li> <NavLink to={'/testimonials'}>Testimonials</NavLink></li>
     <li> <NavLink to={'/Events-and-Activities'}>Events and Activities</NavLink></li>
     <li> <NavLink to={'/contact-us'}>Contact Us</NavLink></li>
-    <li > <NavLink to={'/book-now'} > <span className="font-medium">Book Now</span > </NavLink></li>
+    <li > <NavLink to={'/my-booking'} > <span className="">My Booking</span > </NavLink></li>
 
     <li tabIndex={0}>
       <details>
@@ -25,6 +25,7 @@ const Navbar = () => {
           <li><NavLink to={'/local-area-guide'}>Local Area Guide</NavLink></li>
           <li><NavLink to={'/faqs'}>FAQ</NavLink></li>
           <li><NavLink to={'/about-us'}>About Us</NavLink></li>
+          <li><NavLink to={'/terms-and-conditions'}>Terms And Conditions</NavLink></li>
         </ul>
       </details>
     </li>
