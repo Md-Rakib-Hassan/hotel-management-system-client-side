@@ -17,6 +17,7 @@ import Registration from "../pages/Registration";
 import Room from "../pages/Room";
 import PrivateRoute from "./PrivateRoute";
 import TermsAndConditionsPage from "../pages/TermsAndConditionsPage";
+import MyBooking from "../pages/MyBooking";
 
 
   const router= createBrowserRouter([
@@ -52,7 +53,7 @@ import TermsAndConditionsPage from "../pages/TermsAndConditionsPage";
 
             {
               path:'/my-booking',
-              element:<PrivateRoute></PrivateRoute>,
+              element:<PrivateRoute><MyBooking></MyBooking></PrivateRoute>,
             },
             {
               path:'/career-opportunities',

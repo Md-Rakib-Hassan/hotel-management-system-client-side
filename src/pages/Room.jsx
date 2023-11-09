@@ -49,6 +49,10 @@ const Room = () => {
         const bookingDetails={
             email: user.email,
             roomId,
+            base:roomInfo.base,
+            title:roomInfo.title,
+            price:roomInfo.price,
+            totalDays,
             fromDate,
             toDate,
         }
