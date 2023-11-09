@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import auth from '../auth/firebase.config';
+import useAxios from '../customHooks/useAxios';
 const provider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
 
@@ -18,6 +19,7 @@ const AuthProvider = ({ children }) => {
     const handlePriceValue = (value) => setPrice(value);
     const handlePersonValue = (value) => setPerson(value);
     const handleUnitValue = (value) => setRoom(value);
+    const axios=useAxios();
 
 
 
@@ -36,20 +38,30 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: userEmail };
+            setUser(currentUser);
+            console.log('current user', currentUser);
+            setIsLoding(false);
 
-        const unsub = () => {
-            onAuthStateChanged(auth, (curentUser) => {
-                setUser(curentUser);
-                console.log(curentUser);
-                setIsLoding(false)
+            if(currentUser){
+                axios.post('/auth/access-token',loggedUser)
+                .then(res=>{
+                   
+                })
+            }
 
-            })
-
-
-
+            else{
+                axios.post('/logout',loggedUser)
+                .then(res=>{
+                    
+                })
+            }
+        });
+        return () => {
+            return unsubscribe();
         }
-        return unsub();
-
     }, [])
 
     const logOut = () => {
