@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
+import useAxios from '../customHooks/useAxios';
+import Swal from 'sweetalert2';
+
 
 const ContactUs = () => {
 
     const {user}=useContext(AuthContext);
+    const axios=useAxios();
 
 
     const handleSubmit = (e) => {
@@ -15,7 +19,19 @@ const ContactUs = () => {
 
         const contactInfo={name,email,subject,message};
         console.log(contactInfo);
-        e.target.reset();
+        
+
+        axios.post('/contacts-info',contactInfo)
+        .then(res=>{
+            if(res.data.acknowledged){
+            e.target.reset();
+             return   Swal.fire('Thank You.', 'We will contact you soon', 'success')
+
+            }
+             return   Swal.fire('Try Again', 'Something gone wrong', 'error')
+             
+
+        })
 
         
 
