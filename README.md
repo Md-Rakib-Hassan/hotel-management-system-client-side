@@ -1,4 +1,4 @@
-# Kroy Tech
+# BookHotel
 live link: [BookHotel](https://bookhotel-ffd71.web.app/)
 
 ### Here is some features and functionality of my website:
