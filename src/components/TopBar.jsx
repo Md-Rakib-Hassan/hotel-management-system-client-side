@@ -6,24 +6,31 @@ const TopBar = () => {
     const axios=useAxios();
     const [sortField,setSortField]=useState('');
     const [sortOrder,setSortOrder]=useState('');
-    const {loadedRooms,setLoadedRooms} =useContext(AuthContext);
+    const { setLoadedRooms,
+        loadedRooms,
+        price,
+        person,
+        room,
+    }=useContext(AuthContext);
    
     // const =axios.get('')
 
     const setValue= (e)=>{
         const value=e.target.value;
-        if(!value) return;
         const [field,order]=value.split(',');
         setSortField(field);
         setSortOrder(order);
 
     }
-
+//http://localhost:5000/api/v1/hotel-details?sortField=price&sortOrder=asc&pricemin=0&pricemax=8000&membermin=1&membermax=10&roommin=0&roommax=150
     useEffect(()=>{
-        axios.get(`/hotel-details?sortField=${sortField}&sortOrder=${sortOrder}`)
+        console.log( price,
+            person,
+            room,);
+        axios.get(`/hotel-details?sortField=${sortField}&sortOrder=${sortOrder}&pricemin=${price[0]}&pricemax=${price[1]}&membermin=${person[0]}&membermax=${person[1]}&roommin=${room[0]}&roommax=${room[1]}`)
         .then(res=>(setLoadedRooms(res.data)));
 
-    },[sortField,sortOrder,axios,setLoadedRooms]);
+    },[sortField,sortOrder,axios,setLoadedRooms,price,person,room]);
 
     console.log(loadedRooms);
 

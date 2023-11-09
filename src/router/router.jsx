@@ -16,6 +16,7 @@ import AboutUs from "../pages/AboutUs";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import Room from "../pages/Room";
+import PrivateRoute from "./PrivateRoute";
 
 
   const router= createBrowserRouter([
@@ -46,7 +47,7 @@ import Room from "../pages/Room";
             },
             {
               path:'/contact-us',
-              element:<ContactUs></ContactUs>,
+              element:<PrivateRoute><ContactUs></ContactUs></PrivateRoute> ,
             },
 
             {

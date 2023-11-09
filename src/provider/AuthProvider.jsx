@@ -1,16 +1,23 @@
-import  { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import auth from '../auth/firebase.config';
 const provider = new GoogleAuthProvider();
-export const AuthContext= createContext(null);
+export const AuthContext = createContext(null);
 
 
 
 const AuthProvider = ({ children }) => {
 
-    const [loadedRooms,setLoadedRooms]=useState([]);
+    const [loadedRooms, setLoadedRooms] = useState([]);
+    const [price, setPrice] = useState([]);
+    const [person, setPerson] = useState([]);
+    const [room, setRoom] = useState([]);
     const [user, setUser] = useState(null);
     const [isLoding, setIsLoding] = useState(true);
+
+    const handlePriceValue = (value) => setPrice(value);
+    const handlePersonValue = (value) => setPerson(value);
+    const handleUnitValue = (value) => setRoom(value);
 
 
 
@@ -51,7 +58,7 @@ const AuthProvider = ({ children }) => {
     }
 
 
-  
+
 
 
 
@@ -69,6 +76,15 @@ const AuthProvider = ({ children }) => {
         auth,
         loadedRooms,
         setLoadedRooms,
+        handlePriceValue,
+        handlePersonValue,
+        handleUnitValue,
+        price, 
+        setPrice,
+        person, 
+        setPerson,
+        room,
+        setRoom,
 
     }
 
@@ -79,7 +95,7 @@ const AuthProvider = ({ children }) => {
             <AuthContext.Provider value={allChildren}>
                 {children}
             </AuthContext.Provider>
-            
+
         </div>
     );
 };

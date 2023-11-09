@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './RangeSlider.css'
 import Slider from 'react-slider';
 
 
 
-const RangeSlider = ({title, unit,MIN,MAX}) => {
+const RangeSlider = ({title, unit,MIN,MAX,getValue}) => {
     const [value,setValue]= useState([MIN,MAX]);
+    
+   useEffect(()=>{
+    getValue(value);
+
+   },[value,getValue])
+
     return (
         <div className='box '>
             <p className='font-medium mb-4'>{title} </p>

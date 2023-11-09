@@ -13,7 +13,7 @@ const AllRoomCard = ({ info }) => {
             
             <div className='absolute bottom-4 text-white ml-6 lg:ml-2 space-y-3 z-20'>
                 <h1 className='font-medium text-xl'>{info.title}</h1>
-                <div className=' flex gap-6  text-base'>
+                <div className=' flex gap-5  text-base'>
                     
                     <p className='flex items-center gap-1'>
                      <span className='text-xl'><BiUserCircle/></span>   {info.members} GUESTS

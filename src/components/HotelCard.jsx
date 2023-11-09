@@ -12,7 +12,7 @@ const HotelCard = ({ info }) => {
 
             
             
-            <div className='absolute bottom-4 text-white ml-6 lg:ml-12 space-y-3 z-20'>
+            <div className='absolute bottom-4 text-white ml-6  space-y-3 z-20'>
                 <h1 className='font-medium text-2xl'>{info.title}</h1>
                 <div className=' flex gap-6 lg:gap-10 lg:text-xl text-base'>
                     
