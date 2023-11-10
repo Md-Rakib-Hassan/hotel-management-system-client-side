@@ -48,7 +48,7 @@ const MyBooking = () => {
           <br/>
           To: {booking.toDate}
         </td>
-        <td>{booking.totalDays}</td>
+        <td>{booking.totalDays} days</td>
         <th>
           <button className="btn btn-ghost btn-xs">Update</button>
           <button className="btn btn-ghost btn-xs">Review</button>
