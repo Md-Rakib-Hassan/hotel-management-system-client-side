@@ -2,10 +2,10 @@ import { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import auth from '../auth/firebase.config';
 import useAxios from '../customHooks/useAxios';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 const provider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
-
-
 
 const AuthProvider = ({ children }) => {
 
@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
     const handlePersonValue = (value) => setPerson(value);
     const handleUnitValue = (value) => setRoom(value);
     const axios=useAxios();
-
+    
 
 
     const createUser = (email, password) => {
@@ -48,12 +48,21 @@ const AuthProvider = ({ children }) => {
             if(currentUser){
                 axios.post('/auth/access-token',loggedUser)
                 .then(res=>{
+
+                    // Swal.fire('Logged In', 'You successfully done Login', 'success');
+                    toast.success('Logged In Success')
+              
+                    
                    
+                })
+                .catch(err => {
+                    logOut()
+
                 })
             }
 
             else{
-                axios.post('/logout',loggedUser)
+                axios.post('/auth/logout',loggedUser)
                 .then(res=>{
                     
                 })

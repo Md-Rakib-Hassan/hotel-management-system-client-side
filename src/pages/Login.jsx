@@ -30,8 +30,7 @@ const Login = () => {
     const handleGoogleSignInPopup = () => {
         googleSignInbyPop()
             .then(() => {
-                Swal.fire('Logged In', 'You successfully done Login', 'success')
-                navigate('/');
+                
             })
 
             .catch((error) => {
