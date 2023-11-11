@@ -35,7 +35,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className="footer p-10 bg-gray-300 mt-10 text-base-content">
+        <footer className="footer p-10 bg-gray-300  text-base-content overflow-hidden">
             <nav>
                 <header className="footer-title">Services</header>
                 <Link to='/local-area-guide' className="link link-hover">Local Area Guide</Link>
@@ -60,8 +60,8 @@ const Footer = () => {
                         <span className="label-text">Enter your email address</span>
                     </label>
                     <div  className="relative">
-                        <input type="text" name='email' placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                        <input type='submit' value={'Subscribe'}  className="btn bg-blue-500 hover:bg-blue-600 text-white absolute top-0 right-0 rounded-l-none"/>
+                        <input type="text" name='email' placeholder="username@site.com" className="input input-bordered md:w-full w-56 pr-16" />
+                        <input type='submit' value={'Subscribe'}  className="btn bg-blue-500 hover:bg-blue-600 text-white absolute top-0 md:right-0 right-14 rounded-l-none"/>
                     </div>
                 </fieldset>
             </form>

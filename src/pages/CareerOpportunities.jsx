@@ -46,7 +46,7 @@ const CareerOpportunities = () => {
 
 
     return (
-        <div className="container mx-auto p-4 mt-10">
+        <div className="container mx-auto p-4 mt-24">
             <ToastContainer />
             <h1 className="text-3xl font-bold text-center mb-6">Career Opportunities at BookHotel</h1>
             <p className="text-gray-700 mb-6">

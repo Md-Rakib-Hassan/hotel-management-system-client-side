@@ -7,6 +7,7 @@ import Slider from 'react-slider';
 const RangeSlider = ({title, unit,MIN,MAX,getValue}) => {
     const [value,setValue]= useState([MIN,MAX]);
     
+    
    useEffect(()=>{
     getValue(value);
 

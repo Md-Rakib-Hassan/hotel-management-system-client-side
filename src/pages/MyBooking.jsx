@@ -14,7 +14,7 @@ const MyBooking = () => {
 
 
     return (
-        <div className="overflow-x-auto w-5/6 mx-auto">
+        <div className="overflow-x-auto w-5/6 mx-auto mt-24">
   <table className="table">
     {/* head */}
     <thead>

@@ -43,7 +43,7 @@ const ContactUs = () => {
 
     
     return (
-        <div className='w-3/4 mx-auto space-y-3'>
+        <div className='w-3/4 mx-auto space-y-3 mt-24'>
             <div className='mt-10'>
 
             <div className='mb-10'>

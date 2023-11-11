@@ -14,7 +14,7 @@ const FAQ = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
 
   return (
-    <div className="container mx-auto w-3/4 p-4">
+    <div className="container mx-auto w-3/4 p-4 mt-24">
       <h1 className="text-3xl font-semibold mt-10  mb-4">Frequently Asked Questions</h1>
       <p className="text-gray-700 mb-12">
         Welcome to our FAQ section! Here, we&apos;ve compiled answers to some of the most commonly asked questions about our hotel and services. If you have a question that&apos;s not covered here, please don&apos;t hesitate to <a className="text-blue-600 underline" href="/contact-us">contact us</a>.

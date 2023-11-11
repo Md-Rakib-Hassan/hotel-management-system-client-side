@@ -2,7 +2,7 @@ import React from 'react';
 
 const EventsAndActivities = () => {
     return (
-        <div>
+        <div className='mt-24'>
             
         </div>
     );

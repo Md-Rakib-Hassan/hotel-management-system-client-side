@@ -36,7 +36,7 @@ const LocalAreaGuide = () => {
 
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-24">
       <h1 className="text-3xl font-bold text-center mb-4">Local Area Guide</h1>
       <p className="text-gray-700 mb-6">
         Welcome to our Local Area Guide! Explore the surrounding area and discover the best attractions and activities. Whether you&apos;re interested in sightseeing, dining, outdoor adventures, or cultural experiences, there&apos;s something for everyone to enjoy. Check out our recommendations below.

@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const Root = () => {
     return (
-        <div>
+        <div className='overscroll-x-none'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
