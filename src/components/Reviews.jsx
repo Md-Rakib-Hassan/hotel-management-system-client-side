@@ -3,14 +3,14 @@ import useAxios from "../customHooks/useAxios";
 import Review from "./Review";
 
 
-const Reviews = () => {
+const Reviews = ({roomId}) => {
     const axios=useAxios();
     const [review,setReview]=useState([]);
 
     useEffect(()=>{
-        axios.get('/reviews')
+        axios.get(`/reviews/${roomId}`)
         .then(res=>setReview(res.data));
-    },[axios])
+    },[axios,roomId])
 
 
 

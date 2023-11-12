@@ -3,9 +3,9 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Reviews from './Reviews';
 
-const RoomTabs = () => {
+const RoomTabs = ({roomId}) => {
     return (
-        <div className='w-2/3 mx-auto'>
+        <div className='w-2/3 mx-auto py-5 mb-16'>
 
             <Tabs>
                 <TabList>
@@ -17,7 +17,7 @@ const RoomTabs = () => {
                     <HouseRule></HouseRule>
                 </TabPanel>
                 <TabPanel>
-                    <Reviews></Reviews>
+                    <Reviews roomId={roomId}></Reviews>
                 </TabPanel>
             </Tabs>
 

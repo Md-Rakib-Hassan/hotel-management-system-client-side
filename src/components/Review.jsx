@@ -15,8 +15,9 @@ const Review = ({ info }) => {
             <img className='rounded-full h-24 w-auto mx-auto' src={info.image} alt="" />
             <h1 className='font-bold text-xl'>{info.name}</h1>
             <div className='flex justify-center text-yellow-400 '>{...ratings}</div>
+            <p className='pt-4 text-left font-medium'>Catagory: {info?.room_title}</p>
 
-            <p className='pt-4 text-justify'>{info.feedback}</p>
+            <p className=' text-justify'>{info.feedback}</p>
 
         </div>
     );

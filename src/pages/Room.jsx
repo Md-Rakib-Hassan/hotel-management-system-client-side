@@ -128,7 +128,7 @@ const Room = () => {
 
             </div>
 
-            <RoomTabs></RoomTabs>
+            <RoomTabs roomId={roomId}></RoomTabs>
 
 
 

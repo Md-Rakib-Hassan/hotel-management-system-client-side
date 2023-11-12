@@ -8,7 +8,7 @@ const Rooms = () => {
     const { loadedRooms } = useContext(AuthContext);
     return (
 
-        <div className='flex flex-col-reverse gap-5 md:flex-row-reverse px-2 mt-24'>
+        <div className='flex flex-col-reverse gap-5 md:flex-row-reverse px-2 mt-24 py-10'>
 
             <div className=' md:w-3/4'>
                 <TopBar></TopBar>
