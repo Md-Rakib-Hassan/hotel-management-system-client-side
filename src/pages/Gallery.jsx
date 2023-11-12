@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useAxios from '../customHooks/useAxios';
 import LightGallery from 'lightgallery/react';
 
@@ -8,6 +8,7 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
+import { Helmet } from 'react-helmet';
 
 const Gallery = () => {
     const axios = useAxios();
@@ -26,6 +27,11 @@ const Gallery = () => {
 
     return (
         <div className='mx-auto mt-24'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | Gallery</title>
+
+            </Helmet>
 
             <LightGallery
                 onInit={onInit}

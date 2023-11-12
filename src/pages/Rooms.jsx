@@ -3,12 +3,18 @@ import TopBar from '../components/TopBar';
 import { AuthContext } from '../provider/AuthProvider';
 import RoomSidebar from '../components/RoomSidebar';
 import AllRoomCard from '../components/AllRoomCard';
+import { Helmet } from 'react-helmet';
 
 const Rooms = () => {
     const { loadedRooms } = useContext(AuthContext);
     return (
 
         <div className='flex flex-col-reverse gap-5 md:flex-row-reverse px-2 mt-24 py-10'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | Rooms</title>
+
+            </Helmet>
 
             <div className=' md:w-3/4'>
                 <TopBar></TopBar>

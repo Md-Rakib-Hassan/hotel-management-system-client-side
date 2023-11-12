@@ -1,17 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import useAxios from '../customHooks/useAxios';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { BiUserCircle } from 'react-icons/bi';
 import { LiaExpandArrowsAltSolid, LiaMoneyBillWaveAltSolid } from 'react-icons/lia'
 import './css/Room.css'
-import { DatePicker, Space } from 'antd';
+import { DatePicker} from 'antd';
 
 import RoomTabs from '../components/RoomTabs';
 import moment from 'moment/moment';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 const Room = () => {
     const { roomId } = useParams();
     const axios = useAxios();
@@ -77,6 +78,11 @@ const Room = () => {
     const { RangePicker } = DatePicker;
     return (
         <div className='mt-24'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | Rooms</title>
+
+            </Helmet>
 
             <div className='flex lg:flex-row flex-col'>
                 <div className='lg:w-2/3'>

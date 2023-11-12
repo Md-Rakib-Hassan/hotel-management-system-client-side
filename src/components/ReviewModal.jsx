@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import useAxios from '../customHooks/useAxios';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../provider/AuthProvider';
-import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const ReviewModal = ({ booking }) => {

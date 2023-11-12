@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useAxios from '../customHooks/useAxios';
 import { AuthContext } from '../provider/AuthProvider';
 import ReviewModal from '../components/ReviewModal';
+import { Helmet } from 'react-helmet';
 
 const MyBooking = () => {
     const [bookings, setBookings] = useState([]);
@@ -16,6 +17,11 @@ const MyBooking = () => {
 
     return (
         <div className="overflow-x-auto w-5/6 mx-auto mt-24">
+          <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | My Booking</title>
+
+            </Helmet>
   <table className="table">
     {/* head */}
     <thead>

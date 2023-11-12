@@ -6,7 +6,7 @@ const Navbar = () => {
 
 
   const context = useContext(AuthContext);
-    const { user, logOut,isLoding } = context;
+    const { user, logOut } = context;
   
   const navElement = <>
     <li><NavLink to={'/'}>Home</NavLink></li>

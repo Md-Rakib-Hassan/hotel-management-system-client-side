@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import useAxios from '../customHooks/useAxios';
-import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const CareerOpportunities = () => {
 
@@ -50,6 +50,11 @@ const CareerOpportunities = () => {
 
     return (
         <div className="container mx-auto p-4 mt-24">
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | Career Opportunities</title>
+
+            </Helmet>
             <ToastContainer />
             <h1 className="text-3xl font-bold text-center mb-6">Career Opportunities at BookHotel</h1>
             <p className="text-gray-700 mb-6">

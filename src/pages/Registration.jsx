@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Registration = () => {
 
@@ -51,6 +52,11 @@ const Registration = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 bg-[url(https://www.reshot.com/preview-assets/illustrations/GTQRL8HFXU/system-user-login-GTQRL8HFXU-w1600.jpg)]">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>BookHotel | Registration</title>
+
+            </Helmet>
             <form onSubmit={handleSubmit} >
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
