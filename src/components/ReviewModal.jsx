@@ -2,10 +2,15 @@ import React, { useContext } from 'react';
 import useAxios from '../customHooks/useAxios';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../provider/AuthProvider';
+import { Navigate } from 'react-router-dom';
 
 const ReviewModal = ({ booking }) => {
     const axios = useAxios();
     const { user } = useContext(AuthContext);
+
+    const relod=()=>{
+        window.location.reload();
+    }
 
 
     const handleSubmit = (e) => {
@@ -14,11 +19,6 @@ const ReviewModal = ({ booking }) => {
         const feedback = e.target.feedback.value
         const rating = e.target.rating6.value
 
-
-
-
-
-        room_title
 
 
 
@@ -32,11 +32,22 @@ const ReviewModal = ({ booking }) => {
 
         };
 
+        
+
 
         axios.post('/reviews', reviewInfo)
             .then(res => {
                 if (res.data.acknowledged) {
                     e.target.reset();
+
+                    axios.put(`/review-given/${booking?._id}`)
+                    .then(res => {
+                        if(res.data.modifiedCount==0){
+                            return toast.error("Something went wrong")
+                            
+                        }
+                    
+                    })
 
                     return toast.success("Review successfully posted")
 
@@ -56,7 +67,7 @@ const ReviewModal = ({ booking }) => {
     return (
         <div>
 
-            <button className="btn btn-ghost btn-xs" onClick={() => document.getElementById(booking._id).showModal()}>Review</button>
+            <button className={`btn btn-ghost btn-xs  ${ booking?.review_given ?'text-green-600':'' }`} onClick={booking?.review_given ? '':() => document.getElementById(booking._id).showModal()}>{booking?.review_given ? 'Reviewed':'Review'}</button>
             <dialog id={booking._id} className="modal">
                 <div className="modal-box">
 
@@ -102,7 +113,7 @@ const ReviewModal = ({ booking }) => {
 
                 </div>
                 <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
+                    <button onClick={relod}>close</button>
                 </form>
             </dialog>
 

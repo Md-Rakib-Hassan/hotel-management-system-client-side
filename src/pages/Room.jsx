@@ -76,7 +76,7 @@ const Room = () => {
 
     const { RangePicker } = DatePicker;
     return (
-        <div>
+        <div className='mt-24'>
 
             <div className='flex lg:flex-row flex-col'>
                 <div className='lg:w-2/3'>
