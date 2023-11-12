@@ -11,6 +11,7 @@ const Reviews = ({roomId}) => {
         axios.get(`/reviews/${roomId}`)
         .then(res=>setReview(res.data));
     },[axios,roomId])
+    if(review.length==0) return <div className="text-center pt-10">There is no review yet.</div>
 
 
 

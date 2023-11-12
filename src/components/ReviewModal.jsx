@@ -3,6 +3,7 @@ import useAxios from '../customHooks/useAxios';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../provider/AuthProvider';
 import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ReviewModal = ({ booking }) => {
     const axios = useAxios();
@@ -67,8 +68,8 @@ const ReviewModal = ({ booking }) => {
     return (
         <div>
 
-            <button className={`btn btn-ghost btn-xs  ${ booking?.review_given ?'text-green-600':'' }`} onClick={booking?.review_given ? '':() => document.getElementById(booking._id).showModal()}>{booking?.review_given ? 'Reviewed':'Review'}</button>
-            <dialog id={booking._id} className="modal">
+            <button className={`btn btn-ghost btn-xs  ${ booking?.review_given ?'text-green-600':'' }`} onClick={booking?.review_given ? ()=>Swal.fire('You already given the review.'):() => document.getElementById(booking._id).showModal()}>{booking?.review_given ? 'Reviewed':'Review'}</button>
+            {<dialog id={booking._id} className="modal">
                 <div className="modal-box">
 
 
@@ -115,7 +116,8 @@ const ReviewModal = ({ booking }) => {
                 <form method="dialog" className="modal-backdrop">
                     <button onClick={relod}>close</button>
                 </form>
-            </dialog>
+            </dialog>}
+            
 
         </div>
     );
