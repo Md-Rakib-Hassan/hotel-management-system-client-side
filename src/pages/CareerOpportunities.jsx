@@ -7,10 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const CareerOpportunities = () => {
 
+
+
     const axios = useAxios();
     const [jobData, setJobData] = useState([]);
-    const {user}=useContext(AuthContext);
-    
+    const { user } = useContext(AuthContext);
+
 
     useEffect(() => {
         axios.get('/jobsopen')
@@ -24,21 +26,22 @@ const CareerOpportunities = () => {
         const email = e.target.email.value
 
 
-        const cvInfo={name,email,cvlink};
-        
+        const cvInfo = { name, email, cvlink };
 
-        axios.post('/job-req',cvInfo)
-        .then(res=>{
-            if(res.data.acknowledged){
-            e.target.reset();
-            return toast.success("We will contact you soon")
-        
 
-            }
-            return toast.error("We will contact you soon")
-             
+        axios.post('/job-req', cvInfo)
+            .then(res => {
+                if (res.data.acknowledged) {
+                    e.target.reset();
 
-        })
+                    return toast.success("We will contact you soon")
+
+
+                }
+                return toast.error("We will contact you soon")
+
+
+            })
 
 
 
@@ -70,12 +73,13 @@ const CareerOpportunities = () => {
 
                                     <form onSubmit={handleSubmit} className='space-y-10'>
 
-                                    <input name='cvlink' disabled value={job?.title} required placeholder='Give your Cv link' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text" />
-                                    <input name='name' disabled value={user?.displayName} required placeholder='Name' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text"  />
-                <input name='email' disabled value={user?.email} required placeholder='Email' className='w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="email"  />
-                                        <input name='cvlink'  required placeholder='Give your Cv link' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text" />
-                                        
+                                        <input name='cvlink' disabled value={job?.title} required placeholder='Give your Cv link' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text" />
+                                        <input name='name' disabled value={user?.displayName} required placeholder='Name' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text" />
+                                        <input name='email' disabled value={user?.email} required placeholder='Email' className='w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="email" />
+                                        <input name='cvlink' required placeholder='Give your Cv link' className=' w-full border-b border-blue-300 focus:outline-none py-1 focus:border-blue-800 focus:border-b-2 transition-colors' type="text" />
+
                                         <input className='btn bg-blue-500 hover:bg-blue-600 text-white' type="submit" value={'SUBMIT'} />
+
                                     </form>
 
 

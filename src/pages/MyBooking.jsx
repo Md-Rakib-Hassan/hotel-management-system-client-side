@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import useAxios from '../customHooks/useAxios';
 import { AuthContext } from '../provider/AuthProvider';
+import ReviewModal from '../components/ReviewModal';
 
 const MyBooking = () => {
     const [bookings, setBookings] = useState([]);
@@ -50,8 +51,10 @@ const MyBooking = () => {
         </td>
         <td>{booking.totalDays} days</td>
         <th>
+          <ReviewModal booking={booking}></ReviewModal>
           <button className="btn btn-ghost btn-xs">Update</button>
-          <button className="btn btn-ghost btn-xs">Review</button>
+          
+         
 
         </th>
         

@@ -55,6 +55,7 @@ const Room = () => {
             totalDays,
             fromDate,
             toDate,
+            review_given:false,
         }
 
         axios.post('/booking-room',bookingDetails)
