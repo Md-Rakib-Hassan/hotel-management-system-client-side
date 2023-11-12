@@ -18,12 +18,14 @@ import Room from "../pages/Room";
 import PrivateRoute from "./PrivateRoute";
 import TermsAndConditionsPage from "../pages/TermsAndConditionsPage";
 import MyBooking from "../pages/MyBooking";
+import Error from "../pages/Error";
 
 
   const router= createBrowserRouter([
     {
         path:'/',
         element:<Root></Root>,
+        errorElement:<Error></Error>,
         children:[
 
             {
