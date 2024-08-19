@@ -1,5 +1,5 @@
 # BookHotel
-live link: [BookHotel](https://bookhotel-ffd71.web.app/)
+live link: [BookHotel](https://bookhotel-2024.netlify.app/)
 
 ### Here is some features and functionality of my website:
 
