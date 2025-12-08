@@ -27,7 +27,7 @@ const TopBar = () => {
         console.log( price,
             person,
             room,);
-        axios.get(`/hotel-details?sortField=${sortField}&sortOrder=${sortOrder}&pricemin=${price[0]}&pricemax=${price[1]}&membermin=${person[0]}&membermax=${person[1]}&roommin=${room[0]}&roommax=${room[1]}`)
+        axios.get(`/hotel-details?sortField=${sortField}&sortOrder=${sortOrder}&pricemin=${price[0]||0}&pricemax=${price[1]||10000}&membermin=${person[0]||1}&membermax=${person[1]||10}&roommin=${room[0]||0}&roommax=${room[1]||200}`)
         .then(res=>(setLoadedRooms(res.data)));
 
     },[sortField,sortOrder,axios,setLoadedRooms,price,person,room]);
